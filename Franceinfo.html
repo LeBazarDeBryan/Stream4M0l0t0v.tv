@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<title> M0l0t0v.tv - Franceinfo: </title>
+<link rel="icon" href="Icon.png" />
+<html>
+<head>
+<body style="background-color:#032100;">
+<style>
+      @font-face { font-family: Modern-M; src: url('ModernFont.ttf'); } 
+      h1, h2, h3, p {
+         font-family: Modern-M
+      }
+</style>
+<center>
+
+<a style="color:#8f8422" href="https://github.com/LeBazarDeBryan/M0l0t0v.tv#readme"><h1> M0l0t0v.tv <h1></a>
+<h2 style="color:#15ff00";> Franceinfo: </h2>
+      <script src="https://cdn.jsdelivr.net/gh/clappr/clappr@latest/dist/clappr.min.js"></script>
+	  <script src="https://cdn.jsdelivr.net/gh/clappr/dash-shaka-playback@latest/dist/dash-shaka-playback.js"></script>
+
+<div id="player"></div>
+  <script>
+    var player = new Clappr.Player(
+        {
+          source: 'Franceinfo.m3u8',
+		  poster: 'Franceinfo.png',
+          plugins: [DashShakaPlayback],
+          shakaConfiguration: {
+            preferredAudioLanguage: 'fr-FR',
+            streaming: {
+              rebufferingGoal: 15
+            }
+          },
+          shakaOnBeforeLoad: function(shaka_player) {
+            // shaka_player.getNetworkingEngine().registerRequestFilter() ...
+          },
+          parentId: '#player'
+        });
+  </script>
+  
+<p style="color:#868686";> Fait par <a style="color:#868686" href="https://github.com/LeBazarDeBryan"> Le Bazar de Bryan </p></a>
+
+</center>
+</body>  
+</head>
